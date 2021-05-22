@@ -97,7 +97,7 @@ dh dh2048.pem
 # Each client will be able to reach the server
 # on 10.8.0.1. Comment this line out if you are
 # ethernet bridging. See the man page for more info.
-server 10.8.0.0 255.255.255.0
+server 10.9.0.0 255.255.255.0
 
 # Maintain a record of client  virtual IP address
 # associations in this file.  If OpenVPN goes down or
@@ -139,7 +139,17 @@ ifconfig-pool-persist {{ .IfconfigPoolPersist }}
 # back to the OpenVPN server.
 ;push "route 192.168.10.0 255.255.255.0"
 ;push "route 192.168.20.0 255.255.255.0"
-push "route 10.8.0.0 255.255.255.0"
+;push "route 10.9.0.0 255.255.255.0"
+
+########## Exaleap private network here ###########
+push "route 10.101.0.0 255.255.0.0 10.9.0.5 10"
+push "route 10.102.0.0 255.255.0.0 10.9.0.5 20"
+push "route 10.103.0.0 255.255.0.0 10.9.0.5 30"
+push "route 10.31.0.0 255.255.0.0 10.9.0.5 40"
+push "route 10.32.0.0 255.255.0.0 10.9.0.5 50"
+push "route 10.33.0.0 255.255.0.0 10.9.0.5 60"
+push "route 10.180.0.0 255.255.0.0 10.9.0.5 70"
+push "route 10.203.0.0 255.255.0.0 10.9.0.5 80"
 
 # To assign specific IP addresses to specific
 # clients or if a connecting client has a private
@@ -189,7 +199,7 @@ push "route 10.8.0.0 255.255.255.0"
 # (The OpenVPN server machine may need to NAT
 # or bridge the TUN/TAP interface to the internet
 # in order for this to work properly).
-push "redirect-gateway def1 bypass-dhcp"
+# push "redirect-gateway def1 bypass-dhcp"
 
 # Certain Windows-specific network settings
 # can be pushed to clients, such as DNS
