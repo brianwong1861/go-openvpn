@@ -141,7 +141,7 @@ ifconfig-pool-persist {{ .IfconfigPoolPersist }}
 # back to the OpenVPN server.
 ;push "route 192.168.10.0 255.255.255.0"
 ;push "route 192.168.20.0 255.255.255.0"
-;push "route 10.9.0.0 255.255.255.0"
+push "route 10.8.0.0 255.255.255.0"
 
 ########## Exaleap private network here ###########
 ;push "route 10.101.0.0 255.255.0.0 10.9.0.5 10"
@@ -201,7 +201,7 @@ ifconfig-pool-persist {{ .IfconfigPoolPersist }}
 # (The OpenVPN server machine may need to NAT
 # or bridge the TUN/TAP interface to the internet
 # in order for this to work properly).
-# push "redirect-gateway def1 bypass-dhcp"
+push "redirect-gateway def1 bypass-dhcp"
 
 # Certain Windows-specific network settings
 # can be pushed to clients, such as DNS
