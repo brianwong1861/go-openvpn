@@ -144,14 +144,14 @@ ifconfig-pool-persist {{ .IfconfigPoolPersist }}
 ;push "route 10.8.0.0 255.255.255.0"
 
 ########## Exaleap private network here ###########
-;push "route 10.101.0.0 255.255.0.0 10.9.0.5 10"
-;push "route 10.102.0.0 255.255.0.0 10.9.0.5 20"
-;push "route 10.103.0.0 255.255.0.0 10.9.0.5 30"
-;push "route 10.31.0.0 255.255.0.0 10.9.0.5 40"
-;push "route 10.32.0.0 255.255.0.0 10.9.0.5 50"
-;push "route 10.33.0.0 255.255.0.0 10.9.0.5 60"
-;push "route 10.180.0.0 255.255.0.0 10.9.0.5 70"
-;push "route 10.203.0.0 255.255.0.0 10.9.0.5 80"
+push "route 10.101.0.0 255.255.0.0"
+push "route 10.102.0.0 255.255.0.0"
+push "route 10.103.0.0 255.255.0.0"
+push "route 10.31.0.0 255.255.0.0"
+push "route 10.32.0.0 255.255.0.0"
+push "route 10.33.0.0 255.255.0.0"
+push "route 10.180.0.0 255.255.0.0"
+push "route 10.203.0.0 255.255.0.0"
 
 # To assign specific IP addresses to specific
 # clients or if a connecting client has a private
