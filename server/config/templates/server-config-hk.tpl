@@ -97,10 +97,12 @@ dh dh2048.pem
 # Each client will be able to reach the server
 # on 10.8.0.1. Comment this line out if you are
 # ethernet bridging. See the man page for more info.
-# 10.9.0.0 -> Production
+# 10.9.0.0 -> CN Staging/Production
 ;server 10.9.0.0 255.255.255.0
-# 10.8.0.0 -> Development
-server 10.8.0.0 255.255.255.0
+# 10.8.0.0 -> Development (deprecated in the future)
+;server 10.8.0.0 255.255.255.0
+# 10.7.0.0 -> HK Staging/Production
+server 10.7.0.0 255.255.255.0
 # Maintain a record of client  virtual IP address
 # associations in this file.  If OpenVPN goes down or
 # is restarted, reconnecting clients can be assigned
@@ -139,9 +141,6 @@ ifconfig-pool-persist {{ .IfconfigPoolPersist }}
 # to know to route the OpenVPN client
 # address pool (10.8.0.0/255.255.255.0)
 # back to the OpenVPN server.
-;push "route 192.168.10.0 255.255.255.0"
-;push "route 192.168.20.0 255.255.255.0"
-;push "route 10.8.0.0 255.255.255.0"
 
 ########## Exaleap private network here in PROD ###########
 ;push "route 10.101.0.0 255.255.0.0"
@@ -154,10 +153,17 @@ ifconfig-pool-persist {{ .IfconfigPoolPersist }}
 ;push "route 10.203.0.0 255.255.0.0"
 
 ########## Exaleap private network here in DEV ###########
-push "route 10.151.0.0 255.255.0.0"
-push "route 10.152.0.0 255.255.0.0"
-push "route 10.153.0.0 255.255.0.0"
-push "route 10.202.0.0 255.255.0.0"
+;push "route 10.151.0.0 255.255.0.0"
+;push "route 10.152.0.0 255.255.0.0"
+;push "route 10.153.0.0 255.255.0.0"
+;push "route 10.202.0.0 255.255.0.0"
+
+########## Exaleap private network here in HK STAGING ###########
+push "route 10.71.0.0 255.255.0.0"
+push "route 10.72.0.0 255.255.0.0"
+push "route 10.73.0.0 255.255.0.0"
+push "route 10.181.0.0 255.255.0.0"
+push "route 10.204.0.0 255.255.0.0"
 
 # To assign specific IP addresses to specific
 # clients or if a connecting client has a private
