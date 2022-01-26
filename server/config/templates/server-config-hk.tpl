@@ -167,6 +167,7 @@ push "route 10.204.0.0 255.255.0.0"
 push "route 10.41.0.0 255.255.0.0"
 push "route 10.42.0.0 255.255.0.0"
 push "route 10.43.0.0 255.255.0.0"
+push "route 192.168.0.0 255.255.0.0"
 
 # To assign specific IP addresses to specific
 # clients or if a connecting client has a private
